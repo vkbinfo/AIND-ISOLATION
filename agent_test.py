@@ -4,6 +4,7 @@ cases used by the project assistant are not public.
 """
 
 import unittest
+from sample_players import center_score
 
 import isolation
 import game_agent
@@ -20,6 +21,11 @@ class IsolationTest(unittest.TestCase):
         self.player2 = "Player2"
         self.game = isolation.Board(self.player1, self.player2)
 
+    def test_Callable(self):
+        board=self.game
+        minimaxAgent=game_agent.MinimaxPlayer()
+        move=minimaxAgent.minimax(board, 1)
+        print(move)
 
 if __name__ == '__main__':
     unittest.main()
